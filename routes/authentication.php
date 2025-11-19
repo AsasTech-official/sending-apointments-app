@@ -6,6 +6,7 @@ use App\Http\Controllers\Authentication\PasswordResetController;
 
 Route::middleware('guest')->get('/', [AuthenticationController::class, 'index'])->name('authentication.index');
 
+//ASSIM Q POSSIVEL REMOVER O MIDDLEWAARE 'check.active' (NÃO NECESSÁRIO)
 Route::middleware(['auth', 'check.active'])->get('Home', [AuthenticationController::class, 'home'])
     ->name('home');
 
