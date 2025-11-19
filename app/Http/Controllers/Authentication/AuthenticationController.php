@@ -53,8 +53,6 @@ class AuthenticationController extends Controller
             ], 403);
         }
 
-        $request->session()->regenerate();
-
         return response()->json([
             'message' => 'Login realizado com sucesso.',
             'user' => $user,
