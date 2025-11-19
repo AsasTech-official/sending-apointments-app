@@ -40,10 +40,6 @@ class AuthenticationController extends Controller
             ], 401);
         }
 
-        $request->session()->regenerate();
-
-        Auth::logoutOtherDevices($request->password);
-
         $user = Auth::user();
 
         if (!$user->active) {
@@ -54,6 +50,8 @@ class AuthenticationController extends Controller
         }
 
         $request->session()->regenerate();
+
+        Auth::logoutOtherDevices($request->password);
 
         return response()->json([
             'message' => 'Login realizado com sucesso.',
