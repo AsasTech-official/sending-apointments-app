@@ -94,6 +94,7 @@ export default function ForgotPasswordModal({ isOpen, onClose }) {
         <Modal
             isOpen={isOpen}
             onClose={resetModal}
+            className="w-full max-w-xl"
             title={
                 <div className="flex items-center space-x-2">
                     {currentStep > 1 && (
