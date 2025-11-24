@@ -1,10 +1,13 @@
 import Navbar from "@/Components/Layouts/Navbar/Navbar";
+import { usePage } from "@inertiajs/react";
 
-export default function AuthenticationLayout({ children, user, onLogout, onChangePassword }) {
+export default function AuthenticationLayout({ children, onLogout, onChangePassword }) {
+    const { auth } = usePage().props;
+
     return (
         <LayoutContent>
             <Navbar
-                user={user}
+                user={auth.user}
                 onLogout={onLogout}
                 onChangePassword={onChangePassword}
             />
